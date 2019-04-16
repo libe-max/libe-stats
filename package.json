@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "chroma-js": "^2.0.3",
+    "libe-components": "^0.5.2",
+    "moment": "^2.24.0",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-scripts": "^2.1.8",

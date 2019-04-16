@@ -3,13 +3,10 @@ import ReactDOM from 'react-dom'
 import * as serviceWorker from './serviceWorker'
 import config from './config.json'
 import 'whatwg-fetch'
-
-const App = props => <div>
-  {/* Replace this App component with your app */}
-</div>
+import Stats from './Stats'
 
 ReactDOM.render(
-  <App {...config} />,
+  <Stats {...config} />,
   document.getElementById('libe-labo-app-wrapper')
 )
 
