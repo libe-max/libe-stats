@@ -1,0 +1,148 @@
+#libe-labo-app-wrapper {
+  min-height: 100%;
+}
+
+.libe-labo-stats {
+  position: relative;
+}
+
+.libe-labo-stats__actions {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 3.5rem;
+}
+
+.libe-labo-stats__graph {
+  padding-top: 3.5rem;
+}
+
+/* States – Default */
+.libe-labo-stats__loader,
+.libe-labo-stats__error {
+  display: none;
+}
+
+/* States – Loading */
+.libe-labo-stats_loading .libe-labo-stats__loader {
+  display: block;
+}
+
+/* States – Error */
+.libe-labo-stats_error .libe-labo-stats__error {
+  display: block;
+}
+
+.libe-labo-stats_error .libe-labo-stats__actions,
+.libe-labo-stats_error .libe-labo-stats__graph,
+.libe-labo-stats_error .libe-labo-stats__list {
+  display: none;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * LOADER
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.libe-labo-stats__loader {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.libe-labo-stats__loader .lblb-loader {
+  margin-left: 50vw;
+  margin-top: 50vh;
+  transform: translate(-50%, -50%);
+}
+
+.libe-labo-stats__loader .lblb-loader svg {
+  width: 2rem;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * ERROR
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.libe-labo-stats__error {
+  margin-top: 30vh;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * ACTIONS BAR
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.libe-labo-stats__actions-bar {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * MAIN GRAPH
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.libe-labo-stats__main-graph {
+  width: 100%;
+  height: 30rem;
+  background: #212128;
+  display: flex;
+  position: relative;
+}
+
+.libe-labo-stats__main-graph-grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.libe-labo-stats__main-graph-bar {
+  position: relative;
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.libe-labo-stats__main-graph-bar:hover {
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+.libe-labo-stats__main-graph-bar-value {
+  background: coral;
+}
+
+.libe-labo-stats__main-graph-bar-content {
+  position: absolute;
+  bottom: 1rem;
+  left: .5rem;
+  z-index: 2;
+  display: none;
+  padding: 0 .5rem;
+  background: #FFFFFF;
+}
+
+.libe-labo-stats__main-graph-bar:hover
+  .libe-labo-stats__main-graph-bar-content {
+    display: block;
+}
+
