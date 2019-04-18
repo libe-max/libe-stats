@@ -49,7 +49,7 @@ export default class ActionsBar extends Component {
     const currentStart = moment(this.startDateInput.value, 'YYYY-MM-DD').startOf('day')
     const currentEnd = moment(this.endDateInput.value, 'YYYY-MM-DD').startOf('day')
     const duration = currentEnd - currentStart
-    const daysDuration = moment.duration(duration).days()
+    const daysDuration = moment.duration(duration).asDays()
     const end = moment().startOf('day')
     const start = moment().startOf('day').subtract(daysDuration, 'days')
     this.startDateInput.value = start.format('YYYY-MM-DD')
@@ -66,7 +66,7 @@ export default class ActionsBar extends Component {
     const currentStart = moment(this.startDateInput.value, 'YYYY-MM-DD').startOf('day')
     const currentEnd = moment(this.endDateInput.value, 'YYYY-MM-DD').startOf('day')
     const duration = currentEnd - currentStart
-    const daysDuration = moment.duration(duration).days()
+    const daysDuration = moment.duration(duration).asDays()
     const start = currentStart.subtract(daysDuration + 1, 'days')
     const end = currentEnd.subtract(daysDuration + 1, 'days')
     this.startDateInput.value = start.format('YYYY-MM-DD')
@@ -83,7 +83,7 @@ export default class ActionsBar extends Component {
     const currentStart = moment(this.startDateInput.value, 'YYYY-MM-DD').startOf('day')
     const currentEnd = moment(this.endDateInput.value, 'YYYY-MM-DD').startOf('day')
     const duration = currentEnd - currentStart
-    const daysDuration = moment.duration(duration).days() 
+    const daysDuration = moment.duration(duration).asDays() 
     const start = currentStart.add(daysDuration + 1, 'days')
     const end = currentEnd.add(daysDuration + 1, 'days')
     this.startDateInput.value = start.format('YYYY-MM-DD')

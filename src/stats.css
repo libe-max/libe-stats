@@ -103,14 +103,67 @@
   background: #212128;
   display: flex;
   position: relative;
+  overflow: hidden;
 }
 
-.libe-labo-stats__main-graph-grid {
+.libe-labo-stats__main-graph-grid,
+.libe-labo-stats__main-graph-grid-verts,
+.libe-labo-stats__main-graph-grid-horizs {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.libe-labo-stats__main-graph-grid-verts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.libe-labo-stats__main-graph-grid-horizs {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.libe-labo-stats__main-graph-grid-vert {
+  position: relative;
+  height: 100%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.libe-labo-stats__main-graph-grid-horiz {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.libe-labo-stats__main-graph-grid-horiz:last-child {
+  opacity: 0;
+}
+
+.libe-labo-stats__main-graph-grid-vert .lblb-annotation,
+.libe-labo-stats__main-graph-grid-horiz .lblb-annotation {
+  position: absolute;
+  color: white;
+  left: .25rem;
+  font-size: .625rem;
+  line-height: .75rem;
+  opacity: .3;
+  font-family: 'Libe-Typewriter';
+}
+
+.libe-labo-stats__main-graph-grid-vert .lblb-annotation {
+  top: .25rem;
+  width: 4rem;
+}
+
+.libe-labo-stats__main-graph-grid-horiz .lblb-annotation {
+  top: -.25rem;
+  transform: translate(0, -100%);
 }
 
 .libe-labo-stats__main-graph-bar {
@@ -131,7 +184,7 @@
   background: coral;
 }
 
-.libe-labo-stats__main-graph-bar-content {
+.libe-labo-stats__main-graph-bar-tooltip {
   position: absolute;
   bottom: 1rem;
   left: .5rem;
@@ -141,8 +194,63 @@
   background: #FFFFFF;
 }
 
+.libe-labo-stats__main-graph-bar-tooltip .lblb-annotation {
+  font-family: 'Libe-Typewriter';
+  line-height: 1rem;
+}
+
+.libe-labo-stats__main-graph-bar-tooltip .lblb-annotation_small {
+  line-height: .75rem;
+}
+
+.libe-labo-stats__main-graph-bar_right-align-tooltip
+  .libe-labo-stats__main-graph-bar-tooltip {
+    left: unset;
+    right: .5rem;
+}
+
 .libe-labo-stats__main-graph-bar:hover
-  .libe-labo-stats__main-graph-bar-content {
+  .libe-labo-stats__main-graph-bar-tooltip {
     display: block;
 }
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * ENTRIES LIST
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.libe-labo-stats__entries-list {
+  width: 100%;
+  max-width: 70rem;
+  margin: 2rem auto 0;
+  margin-bottom: 4rem;
+}
+
+.libe-labo-stats__entries-list-line {
+  width: 100%;
+  display: flex;
+}
+
+.libe-labo-stats__entries-list-item.time {
+  width: 25%;
+}
+
+.libe-labo-stats__entries-list-item.method {
+  width: 13%;
+}
+
+.libe-labo-stats__entries-list-item.url {
+  width: 42%;
+}
+
+.libe-labo-stats__entries-list-item.ip {
+  width: 20%;
+}
+
+.libe-labo-stats__entries-list-load-more {
+  margin-top: 2rem;
+}
+
+
 
