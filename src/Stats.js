@@ -50,7 +50,9 @@ export default class Stats extends Component {
         bounds: { start, end }
       }
     }))
-    const api = this.props.dev_api
+    const api = process.env.NODE_ENV === 'production'
+      ? this.props.prod_api
+      : this.props.dev_api
     const body = { pwd: window.atob(pwd) }
     window.fetch(`${api}/${start}/${end}`, {
       body: JSON.stringify(body),
