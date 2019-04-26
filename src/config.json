@@ -1,4 +1,4 @@
 {
   "dev_api": "http://localhost:3004/stats",
-  "prod_api": "https://libe-labo.site/stats"
+  "prod_api": "/stats"
 }
